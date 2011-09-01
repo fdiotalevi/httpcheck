@@ -1,5 +1,6 @@
 var http = require('http');
 var _ = require('./underscore');
+var port = process.env.PORT || 3000;
 
 var FullResponse = function(req) {
   var url = req.url;
@@ -37,8 +38,8 @@ http.createServer(function (req, res) {
   req.on("end", function() {
     res.end(response.print());  
   });  
-}).listen(1337, "127.0.0.1");
-console.log('Server running at http://127.0.0.1:1337/');
+}).listen(port);
+console.log('Server running at port '+port);
 
 
 
