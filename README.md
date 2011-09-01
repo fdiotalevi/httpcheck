@@ -1,10 +1,20 @@
 Http Check
+==========
 
 Simple web application (written in node.js) to check all the details about incoming HTTP request.
 
-To use it, clone the repository and just type
+If you just want to use it, the application is currently deployed at 
 
-> node app.js
+    http://httpcheck.herokuapp.com/
+
+To install it (you need to install node.js first!), clone the repository 
+
+    git clone git://github.com/fdiotalevi/httpcheck.git
+
+and just type
+    
+    cd httpcheck
+    node app.js
 
 It will start a server on port 3000. Just open the browser at http://localhost:3000 and you will see all your HTTP request details.
 
