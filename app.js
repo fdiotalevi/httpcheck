@@ -11,15 +11,15 @@ var FullResponse = function(req) {
     
   var format = function(key, value, indent) {
     if (_.isString(value))
-      return blanks.substring(0, ++indent * 2) + key+": "+value+"\n"; 
+      return blanks.substring(0, indent++ * 2) + key+": "+value+"\n"; 
     
-    return blanks.substring(0, ++indent * 2) + key+": \n" + _.reduce(_.keys(value), function(sum, it) {
+    return blanks.substring(0, indent++ * 2) + key+": \n" + _.reduce(_.keys(value), function(sum, it) {
                           return sum + format(it, value[it], indent);
                         }, "");
   }        
   
   this.printOut = function() {        
-    return format("response", fields, -1);
+    return format("response", fields, 0);
   }
   
 }
