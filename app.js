@@ -11,11 +11,7 @@ var FullResponse = function(req) {
     if (_.isString(value))
       var valuePart = value+"\n";
     else
-    {      
-      var valuePart = "\n" + _.reduce(_.keys(value), function(sum, it) {
-                                 return sum + format(it, value[it], indent+1);
-                               }, "");
-    }
+      var valuePart = "\n" + _.reduce(_.keys(value), function(sum, it) {  return sum + format(it, value[it], indent+1);  }, "");
           
     return blanks.substring(0, indent * 2) + key+": " + valuePart;
   }        
