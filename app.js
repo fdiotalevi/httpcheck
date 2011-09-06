@@ -1,6 +1,6 @@
-var http = require('http');
-var _ = require('./underscore');
-var port = process.env.PORT || 3000;
+var http = require('http'), 
+    _ = require('./underscore'),
+    port = process.env.PORT || 3000;
 
 var FullResponse = function(req) {
 
