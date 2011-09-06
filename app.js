@@ -5,9 +5,7 @@ var port = process.env.PORT || 3000;
 var FullResponse = function(req) {
 
   var blanks = "                                   ";
-  var fields = {"url": req.url, "method": req.method, 
-              "httpVersion": req.httpVersion,
-              "headers": req.headers, "data": ""};  
+  var fields = {"url": req.url, "method": req.method, "httpVersion": req.httpVersion, "headers": req.headers, "data": ""};  
     
   var format = function(key, value, indent) {
     if (_.isString(value))
