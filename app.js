@@ -16,6 +16,10 @@ var FullResponse = function(req) {
     return blanks.substring(0, indent * 2) + key+": " + valuePart;
   }        
   
+  this.addData = function(data) {
+    fields["data"] += data.toString("utf8");
+  }
+  
   this.printOut = function() {        
     return format("response", fields, 0);
   }
@@ -26,7 +30,7 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   var response = new FullResponse(req);  
   req.on("data", function(it) {
-    fields["data"] += it.toString("utf8");
+    response.addData(it);
   });  
   req.on("end", function() {
     res.end(response.printOut());  
